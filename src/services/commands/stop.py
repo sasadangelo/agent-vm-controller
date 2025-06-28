@@ -27,7 +27,7 @@ class StopVSICommand(BaseCommand):
             resp = self.vpc_client.create_instance_action(instance_id=self.vsi_id, type="stop")
         except Exception as e:
             # Return a failure result with the exception message
-            return CommandResult(False, message=f"Exception occurred while stopping VSI: {e}")
+            return CommandResult(False, message=f"Failed to stop VSI: {e}")
         # If the API call returns HTTP 201, the stop action succeeded
         if resp.get_status_code() == 201:
             return CommandResult(True, message=f"VSI '{self.vsi_id}' stopped successfully.")
