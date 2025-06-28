@@ -5,6 +5,12 @@ It supports essential DevOps operations such as **start**, **stop**, and **list*
 
 ---
 
+## 🧱 Project Architecture
+
+See [docs/architecture.md](docs/architecture.md) for a detailed explanation of the project’s structure, design patterns, and class relationships.
+
+---
+
 ## ✅ Prerequisites
 
 Make sure the following tools are installed:
