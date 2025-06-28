@@ -79,32 +79,62 @@ Its goal is to:
 
 Here is a high-level class diagram using **PlantUML** syntax (you can preview it using [PlantUML Online Editor](https://www.planttext.com)):
 
-```plantuml
-@startuml
-class VSIController {
-    +list_vsi(zone: str): CommandResult[List[VSI]]
-    +start_vsi(id: str, zone: str): CommandResult[str]
-    +stop_vsi(id: str, zone: str): CommandResult[str]
-}
+```mermaid
+classDiagram
+    class VSIController {
+        +list_vsi(zone: str) : CommandResult[List[VSI]]
+        +start_vsi(vsi_id: str, zone: str) : CommandResult[Optional[str]]
+        +stop_vsi(vsi_id: str, zone: str) : CommandResult[Optional[str]]
+    }
 
-class BaseCommand {
-    +execute(): CommandResult[Any]
-}
+    class BaseCommand {
+        <<interface>>
+        +execute() : CommandResult
+    }
 
-class ListVSICommand
-class StartVSICommand
-class StopVSICommand
-class IBMVPCClient
-class VSI
+    class ListVSICommand {
+        -zone: str
+        +execute() : CommandResult[List[VSI]]
+    }
 
-VSIController --> ListVSICommand
-VSIController --> StartVSICommand
-VSIController --> StopVSICommand
-ListVSICommand --> BaseCommand
-StartVSICommand --> BaseCommand
-StopVSICommand --> BaseCommand
-ListVSICommand --> IBMVPCClient
-StartVSICommand --> IBMVPCClient
-StopVSICommand --> IBMVPCClient
-ListVSICommand --> VSI
-@enduml
+    class StartVSICommand {
+        -vsi_id: str
+        -zone: str
+        +execute() : CommandResult[Optional[str]]
+    }
+
+    class StopVSICommand {
+        -vsi_id: str
+        -zone: str
+        +execute() : CommandResult[Optional[str]]
+    }
+
+    class IBMVPCClient {
+        -zone: str
+        +get_client()
+        <<Singleton>>
+    }
+
+    class VSI {
+        -id: str
+        -name: str
+        -status: str
+        -zone: str
+        -cpu: int
+        -ram: int
+    }
+
+    VSIController --> ListVSICommand : uses
+    VSIController --> StartVSICommand : uses
+    VSIController --> StopVSICommand : uses
+
+    ListVSICommand ..|> BaseCommand
+    StartVSICommand ..|> BaseCommand
+    StopVSICommand ..|> BaseCommand
+
+    ListVSICommand --> IBMVPCClient : uses
+    StartVSICommand --> IBMVPCClient : uses
+    StopVSICommand --> IBMVPCClient : uses
+
+    VSIController --> VSI : returns
+```
