@@ -10,6 +10,7 @@ The project follows a clean and modular structure inspired by software architect
 
 ### 📁 Project Structure: IBM Cloud VM Controller
 
+```
 src/
 ├── dtos/                          # 📨 Data Transfer Objects (typed data models)
 │   └── vsi.py                     #    - VSI: represents a Virtual Server Instance
@@ -23,6 +24,7 @@ src/
 │       ├── start.py               #    - StartVSICommand: starts a VSI by ID
 │       ├── stop.py                #    - StopVSICommand: stops a VSI by ID
 │       └── ibm_vpc_client.py      #    - IBMVPCClient: singleton factory for authenticated VPC client
+```
 
 ---
 
