@@ -1,14 +1,28 @@
+[tool.poetry]
+authors = ["D'Angelo Salvatore <you@example.com>"]
+description = "Agentic tool to control IBM Cloud Virtual Servers (VSI)"
+license = "MIT"
+name = "ibm-cloud-vm-controller"
+package-mode = false
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+ibm-vpc = "0.29.1"
+pandas = "2.3.0"
+python = ">=3.13"
+python-dotenv = "1.1.1"
+
+[tool.poetry.group.dev.dependencies]
+detect-secrets = "1.5.0"
+pre-commit = "4.2.0"
+
 [tool.black]
 line-length = 120
 
 [tool.isort]
 profile = "black"
 
-[tool.mypy]
-[[tool.mypy.overrides]]
-ignore_missing_imports = true
-module = "box_sdk_gen.*"
-
-[[tool.mypy.overrides]]
-ignore_missing_imports = true
-module = "apscheduler.*"
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
