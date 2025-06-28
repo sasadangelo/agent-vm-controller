@@ -2,10 +2,6 @@
 # Author: Salvatore D'Angelo
 # Maintainer: Salvatore D'Angelo
 # License: MIT
-from abc import ABC, abstractmethod
+from .vsi import VSI
 
-
-class BaseCommand(ABC):
-    @abstractmethod
-    def execute(self):
-        pass
+__all__ = ["VSI"]

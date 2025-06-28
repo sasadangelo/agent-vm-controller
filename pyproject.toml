@@ -27,6 +27,7 @@ profile = "black"
 [tool.mypy]
 explicit_package_bases = true
 ignore_missing_imports = true
+mypy_path = "src"
 
 [[tool.mypy.overrides]]
 ignore_missing_imports = true
