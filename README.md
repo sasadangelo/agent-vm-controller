@@ -48,12 +48,6 @@ Make sure the following tools are installed:
     source $(poetry env info --path)/bin/activate
     ```
 
-Or enter Poetry's shell directly:
-
-    ```bash
-    poetry shell
-    ```
-
 6. **Set your IBM Cloud API key in a .env file**:
 
 Rename the file `.env-sample`in `.env` and add your IBM Cloud API Key:
@@ -86,4 +80,4 @@ To run the included unit tests:
     PYTHONPATH=src python -m unittest tests/test_vsi_controller.py
     ```
 
-Make sure the .env file is properly configured and that a valid VSI exists in your IBM Cloud account for full integration test coverage.
+Make sure the `.env` file is properly configured and that a valid VSI exists in your IBM Cloud account for full integration test coverage.
