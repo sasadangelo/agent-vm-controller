@@ -50,10 +50,10 @@ Make sure the following tools are installed:
 
 6. **Set your IBM Cloud API key in a .env file**:
 
-Rename the file `.env-sample`in `.env` and add your IBM Cloud API Key:
+Rename the file `.env-sample` in `.env` and add your IBM Cloud API Key:
 
     ```bash
-    API_KEY=your_ibm_cloud_api_key
+    API_KEY="<your_ibm_cloud_api_key>"
     ```
 
 ## ▶️ Usage
