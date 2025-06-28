@@ -1,0 +1,14 @@
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = "box_sdk_gen.*"
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = "apscheduler.*"
