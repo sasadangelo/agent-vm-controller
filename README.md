@@ -25,50 +25,50 @@ Make sure the following tools are installed:
 
 1. **Clone the repository**:
 
-   ```bash
-   git clone https://github.com/your-org/ibm-cloud-vm-controller.git
-   cd ibm-cloud-vm-controller
-   ```
+```bash
+git clone https://github.com/your-org/ibm-cloud-vm-controller.git
+cd ibm-cloud-vm-controller
+```
 
 2. **Set your Python version using pyenv**:
 
-    ```bash
-    pyenv local 3.13.0
-    ```
+```bash
+pyenv local 3.13.0
+```
 
 3. **Install dependencies using Poetry**:
 
-    ```bash
-    poetry install
-    ```
+```bash
+poetry install
+```
 
 4. **Print the path of the virtual environment (optional, for manual activation)**:
 
-    ```bash
-    poetry env info --path
-    ```
+```bash
+poetry env info --path
+```
 
 5. **Then activate the environment manually**:
 
-    ```bash
-    source $(poetry env info --path)/bin/activate
-    ```
+```bash
+source $(poetry env info --path)/bin/activate
+```
 
 6. **Set your IBM Cloud API key in a .env file**:
 
 Rename the file `.env-sample` in `.env` and add your IBM Cloud API Key:
 
-    ```bash
-    API_KEY="<your_ibm_cloud_api_key>"
-    ```
+```bash
+API_KEY="<your_ibm_cloud_api_key>"
+```
 
 ## ▶️ Usage
 
 Run the controller from the terminal:
 
-    ```bash
-    python3 main.py
-    ```
+```bash
+python3 main.py
+```
 
 This script will:
 
@@ -82,8 +82,8 @@ You can customize main.py or integrate the VSI class and command modules in your
 
 To run the included unit tests:
 
-    ```bash
-    PYTHONPATH=src python -m pytest -v tests/test_vsi_controller.py
-    ```
+```bash
+PYTHONPATH=src python -m pytest -v tests/test_vsi_controller.py
+```
 
 Make sure the `.env` file is properly configured and that a valid VSI exists in your IBM Cloud account for full integration test coverage.
