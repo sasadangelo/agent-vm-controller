@@ -9,10 +9,10 @@ from services.commands.ibm_vpc_client import IBMVPCClient
 
 
 class StopVSICommand(BaseCommand):
-    def __init__(self, vsi_id: str, zone: str):
+    def __init__(self, vsi_id: str):
         self.vsi_id = vsi_id
         # Instantiate the VPC client for the given zone
-        self.vpc_client = IBMVPCClient(zone).get_client()
+        self.vpc_client = IBMVPCClient().get_client()
 
     def execute(self) -> CommandResult[Optional[str]]:
         """

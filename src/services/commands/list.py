@@ -10,14 +10,14 @@ from services.commands.ibm_vpc_client import IBMVPCClient
 
 
 class ListVSICommand(BaseCommand):
-    def __init__(self, zone: str):
+    def __init__(self):
         """
         Initialize with the IBM Cloud zone (availability zone).
 
         :param zone: IBM Cloud zone (e.g., "us-south-1").
         """
         # Instantiate the VPC client for the given zone
-        self.vpc_client = IBMVPCClient(zone).get_client()
+        self.vpc_client = IBMVPCClient().get_client()
 
     def execute(self) -> CommandResult[List[VSI]]:
         """

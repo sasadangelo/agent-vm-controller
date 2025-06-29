@@ -39,11 +39,11 @@ def main() -> None:
         return
 
     # Stop the VSI
-    stop_result = controller.stop_vsi(vsi_id=vsi.id, zone=vsi.zone)
+    stop_result = controller.stop_vsi(vsi_id=vsi.id)
     print(f"🛑 Stop result: {stop_result.message}")
 
     # Start the VSI again
-    start_result = controller.start_vsi(vsi_id=vsi.id, zone=vsi.zone)
+    start_result = controller.start_vsi(vsi_id=vsi.id)
     print(f"🚀 Start result: {start_result.message}")
 
     # List all VSIs

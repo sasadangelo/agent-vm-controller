@@ -62,7 +62,7 @@ Rename the file `.env-sample` in `.env` and add your IBM Cloud API Key:
     API_KEY="<your_ibm_cloud_api_key>"
     ```
 
-## ▶️ Usage
+## ▶️ Usage
 
 Run the controller from the terminal:
 
@@ -83,7 +83,7 @@ You can customize main.py or integrate the VSI class and command modules in your
 To run the included unit tests:
 
     ```bash
-    PYTHONPATH=src python -m unittest tests/test_vsi_controller.py
+    PYTHONPATH=src python -m pytest -v tests/test_vsi_controller.py
     ```
 
 Make sure the `.env` file is properly configured and that a valid VSI exists in your IBM Cloud account for full integration test coverage.
